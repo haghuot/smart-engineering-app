@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>智能工程监管平台</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="device">
+    <div class="device-notch"></div>
+    <div class="app" id="app">
+
+      <!-- 首页 / 驾驶舱适配 -->
+      <section class="page active" id="page-home" data-tab="home">
+        <header class="topbar topbar-brand">
+          <div class="brand-row">
+            <div class="logo-mark"></div>
+            <h1>智能工程监管平台</h1>
+          </div>
+          <button class="icon-btn" data-go="messages" aria-label="消息">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16v12H4V6z" stroke="currentColor" stroke-width="1.6"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.6"/></svg>
+          </button>
+        </header>
+
+        <div class="scroll-body">
+          <div class="page-title-bar">
+            <h2>驾驶舱</h2>
+          </div>
+
+          <div class="metric-grid">
+            <div class="metric-card">
+              <div class="metric-text">
+                <span class="metric-label">在岗人员</span>
+                <strong class="metric-value">—</strong>
+              </div>
+              <div class="metric-icon mi-blue">
+                <svg viewBox="0 0 24 24"><path d="M8 11a3 3 0 100-6 3 3 0 000 6zM16 11a3 3 0 100-6 3 3 0 000 6zM4 19c.8-2.8 2.8-4 4.5-4s3.7 1.2 4.5 4M11 19c.8-2.8 2.8-4 4.5-4s3.7 1.2 4.5 4" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+              </div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-text">
+                <span class="metric-label">今日出勤率</span>
+                <strong class="metric-value">—</strong>
+              </div>
+              <div class="metric-icon mi-green">
+                <svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V7l8-4z" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+              </div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-text">
+                <span class="metric-label">待处理预警</span>
+                <strong class="metric-value">—</strong>
+              </div>
+              <div class="metric-icon mi-orange">
+                <svg viewBox="0 0 24 24"><path d="M12 4a7 7 0 017 7c0 4-3 6-3 6H8s-3-2-3-6a7 7 0 017-7z" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M10 20h4" stroke="currentColor" stroke-width="1.6"/></svg>
+              </div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-text">
+                <span class="metric-label">设备在线率</span>
+                <strong class="metric-value">—</strong>
+              </div>
+              <div class="metric-icon mi-purple">
+                <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="1.6"/></svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-head">快捷入口</div>
+            <div class="quick-grid">
+              <button class="quick-item" data-go="attendance-video"><span class="qi qi-1">考</span>考勤登记</button>
+              <button class="quick-item" data-go="safety-snap"><span class="qi qi-2">拍</span>安全随手拍</button>
+              <button class="quick-item" data-go="location"><span class="qi qi-3">位</span>位置共享</button>
+              <button class="quick-item" data-go="ai-detect"><span class="qi qi-4">识</span>智能识别</button>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-head">业务功能</div>
+            <div class="menu-group">
+              <div class="menu-group-title">考勤管理</div>
+              <button class="menu-row" data-go="attendance-video"><span>考勤登记</span><span class="desc">视频拍摄快速登记</span><i>›</i></button>
+              <button class="menu-row" data-go="attendance-manual"><span>手动登记</span><span class="desc">手动方式补登记</span><i>›</i></button>
+            </div>
+            <div class="menu-group">
+              <div class="menu-group-title">安全巡检</div>
+              <button class="menu-row" data-go="safety-snap"><span>安全随手拍</span><span class="desc">随手上报安全记录</span><i>›</i></button>
+              <button class="menu-row" data-go="safety-log"><span>安全巡查日志</span><span class="desc">日常巡查过程记录</span><i>›</i></button>
+              <button class="menu-row" data-go="safety-video"><span>视频巡查</span><span class="desc">视频扫码识别隐患</span><i>›</i></button>
+              <button class="menu-row" data-go="safety-rectify"><span>安全整改</span><span class="desc">接收并回复整改</span><i>›</i></button>
+              <button class="menu-row" data-go="safety-meeting"><span>安全晨会</span><span class="desc">语音转写 / 视频记录</span><i>›</i></button>
+            </div>
+            <div class="menu-group">
+              <div class="menu-group-title">培训管理</div>
+              <button class="menu-row" data-go="train-attend"><span>培训考勤</span><span class="desc">视频拍摄快速登记</span><i>›</i></button>
+              <button class="menu-row" data-go="train-learn"><span>培训在线学习</span><span class="desc">在线查看培训资料</span><i>›</i></button>
+            </div>
+            <div class="menu-group last">
+              <div class="menu-group-title">智能交互</div>
+              <button class="menu-row" data-go="voice-talk"><span>远程语音</span><span class="desc">实时对讲智能终端</span><i>›</i></button>
+              <button class="menu-row" data-go="ai-detect"><span>智能识别</span><span class="desc">典型安全隐患识别</span><i>›</i></button>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-head">近期预警记录</div>
+            <div class="empty-state">
+              <div class="empty-icon"></div>
+              <p>暂无数据</p>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-head">任务完成情况</div>
+            <div class="empty-state">
+              <div class="empty-icon"></div>
+              <p>暂无数据</p>
+            </div>
+          </div>
+
+          <div class="bottom-spacer"></div>
+        </div>
+      </section>
+
+      <!-- 待办 -->
+      <section class="page" id="page-todo" data-tab="todo">
+        <header class="topbar plain">
+          <h1>待办</h1>
+        </header>
+        <div class="filter-bar">
+          <button class="chip active">全部</button>
+          <button class="chip">紧急</button>
+          <button class="chip">整改</button>
+          <button class="chip">考勤</button>
+        </div>
+        <div class="scroll-body pad">
+          <div class="empty-state tall">
+            <div class="empty-icon"></div>
+            <p>暂无待办任务</p>
+          </div>
+          <div class="bottom-spacer"></div>
+        </div>
+      </section>
+
+      <!-- 消息 -->
+      <section class="page" id="page-messages" data-tab="messages">
+        <header class="topbar plain">
+          <h1>系统消息</h1>
+        </header>
+        <div class="scroll-body pad">
+          <div class="empty-state tall">
+            <div class="empty-icon"></div>
+            <p>暂无系统消息</p>
+          </div>
+          <div class="bottom-spacer"></div>
+        </div>
+      </section>
+
+      <!-- 我的 -->
+      <section class="page" id="page-mine" data-tab="mine">
+        <header class="topbar plain">
+          <h1>个人信息</h1>
+        </header>
+        <div class="scroll-body pad">
+          <div class="profile-card">
+            <div class="avatar">用</div>
+            <div class="profile-meta">
+              <div class="field-line"><label>姓名</label><span class="placeholder">—</span></div>
+              <div class="field-line"><label>角色</label><span class="placeholder">—</span></div>
+            </div>
+          </div>
+          <div class="list-card">
+            <div class="list-row"><span>工号</span><span class="placeholder">—</span></div>
+            <div class="list-row"><span>手机</span><span class="placeholder">—</span></div>
+            <div class="list-row"><span>所属单位</span><span class="placeholder">—</span></div>
+            <div class="list-row"><span>所属项目</span><span class="placeholder">—</span></div>
+          </div>
+          <div class="list-card">
+            <button class="list-row link"><span>我的证书</span><i>›</i></button>
+            <button class="list-row link"><span>班组信息</span><i>›</i></button>
+            <button class="list-row link"><span>考勤统计</span><i>›</i></button>
+            <button class="list-row link"><span>账户安全</span><i>›</i></button>
+            <button class="list-row link"><span>关于平台</span><i>›</i></button>
+          </div>
+          <button class="btn-ghost">退出登录</button>
+          <div class="bottom-spacer"></div>
+        </div>
+      </section>
+
+      <!-- 位置共享 -->
+      <section class="page subpage" id="page-location">
+        <header class="topbar sub">
+          <button class="back-btn" data-back>‹</button>
+          <h1>位置共享</h1>
+          <span class="top-extra"></span>
+        </header>
+        <div class="map-placeholder">
+          <p>地图区域</p>
+          <span>支持多人实时共享位置</span>
+        </div>
+        <div class="sheet">
+          <div class="sheet-title">在线人员</div>
+          <div class="empty-state">
+            <div class="empty-icon"></div>
+            <p>暂无共享人员</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 考勤登记 -->
+      <section class="page subpage" id="page-attendance-video">
+        <header class="topbar sub dark">
+          <button class="back-btn" data-back>‹</button>
+          <h1>考勤登记</h1>
+          <span class="top-extra">视频拍摄</span>
+        </header>
+        <div class="camera-stage">
+          <div class="camera-frame">
+            <div class="face-guide"></div>
+            <p>请将人脸置于框内</p>
+          </div>
+          <div class="meta-row">
+            <div><label>班组</label><span>—</span></div>
+            <div><label>地点</label><span>—</span></div>
+            <div><label>类型</label><span>—</span></div>
+          </div>
+          <button class="shutter" type="button" aria-label="拍摄"><span></span></button>
+          <p class="hint">通过视频拍摄方式进行快速登记</p>
+        </div>
+      </section>
+
+      <!-- 手动登记 -->
+      <section class="page subpage" id="page-attendance-manual">
+        <header class="topbar sub">
+          <button class="back-btn" data-back>‹</button>
+          <h1>手动登记</h1>
+          <span class="top-extra"></span>
+        </header>
+        <div class="scroll-body pad">
+          <form class="form" onsubmit="return false">
+            <label class="field"><span>登记人员</span><select><option value="">请选择</option></select></label>
+            <label class="field"><span>考勤日期</span><input type="date" /></label>
+            <label class="field">
+              <span>考勤类型</span>
+              <div class="seg">
+                <button type="button" class="seg-btn active">上班</button>
+                <button type="button" class="seg-btn">下班</button>
+                <button type="button" class="seg-btn">加班</button>
+              </div>
+            </label>
+            <label class="field"><span>补登记原因</span><textarea rows="3" placeholder="请输入补登记原因"></textarea></label>
+            <label class="field">
+              <span>证明材料</span>
+              <div class="upload"><span>+</span>上传照片</div>
+            </label>
+            <button class="btn-primary" type="button">提交</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- 安全随手拍 -->
+      <section class="page subpage" id="page-safety-snap">
+        <header class="topbar sub">
+          <button class="back-btn" data-back>‹</button>
+          <h1>安全随手拍</h1>
+          <span class="top-extra"></span>
+        </header>
+        <div class="scroll-body pad">
+          <form class="form" onsubmit="return false">
+            <div class="upload tall"><span>+</span>拍摄 / 相册</div>
+            <label class="field">
+              <span>隐患类型</span>
+              <select>
+                <option value="">请选择</option>
+                <option>未戴安全帽</option>
+                <option>未穿反光衣</option>
+                <option>明火</option>
+                <option>吸烟</option>
+                <option>边坡风险</option>
+                <option>违规堆放</option>
+                <option>非作业进入</option>
+                <option>其他</option>
+              </select>
+            </label>
+            <label class="field"><span>位置</span><input type="text" placeholder="请选择或输入位置" /></label>
+            <label class="field"><span>情况说明</span><textarea rows="3" placeholder="请描述现场情况"></textarea></label>
+            <label class="field">
+              <span>紧急程度</span>
+              <div class="seg">
+                <button type="button" class="seg-btn">一般</button>
+                <button type="button" class="seg-btn active">较急</button>
+                <button type="button" class="seg-btn">紧急</button>
+              </div>
+            </label>
+            <button class="btn-primary" type="button">上报</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- 巡查日志 -->
+      <section class="page subpage" id="page-safety-log">
+        <header class="topbar sub">
+          <button class="back-btn" data-back>‹</button>
+          <h1>安全巡查日志</h1>
+          <button class="text-link">新建</button>
+        </header>
+        <div class="scroll-body pad">
+          <div class="empty-state tall">
+            <div class="empty-icon"></div>
+            <p>暂无巡查日志</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 视频巡查 -->
+      <section class="page subpage" id="page-safety-video">
+        <header class="topbar sub dark">
+          <button class="back-btn" data-back>‹</button>
+          <h1>视频巡查</h1>
+          <span class="top-extra">扫码识别</span>
+        </header>
+        <div class="camera-stage">
+          <div class="camera-frame">
+            <div class="qr-guide">
+              <i class="c tl"></i><i class="c tr"></i><i class="c bl"></i><i class="c br"></i>
+            </div>
+            <p>对准巡查点二维码</p>
+          </div>
+          <p class="hint">通过视频快速扫码，识别安全隐患</p>
+          <button class="btn-primary light" type="button">开启视频识别</button>
+        </div>
+      </section>
+
+      <!-- 安全整改 -->
+      <section class="page subpage" id="page-safety-rectify">
+        <header class="topbar sub">
+          <button class="back-btn" data-back>‹</button>
+          <h1>安全整改</h1>
+          <span class="top-extra"></span>
+        </header>
+        <div class="filter-bar">
+          <button class="chip active">待整改</button>
+          <button class="chip">已闭环</button>
+        </div>
+        <div class="scroll-body pad">
+          <div class="empty-state tall">
+            <div class="empty-icon"></div>
+            <p>暂无整改消息</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 安全晨会 -->
+      <section class="page subpage" id="page-safety-meeting">
+        <header class="topbar sub">
+          <button class="back-btn" data-back>‹</button>
+          <h1>安全晨会</h1>
+          <span class="top-extra"></span>
+        </header>
+        <div class="scroll-body pad">
+          <div class="status-card">
+            <div class="rec-dot"></div>
+            <div>
+              <strong>会议记录</strong>
+              <p>语音转文字 · 视频记录</p>
+            </div>
+          </div>
+          <div class="panel plain-panel">
+            <div class="panel-head">转写内容</div>
+            <div class="empty-state">
+              <div class="empty-icon"></div>
+              <p>暂无会议内容</p>
+            </div>
+          </div>
+          <div class="action-row">
+            <button class="action-btn">语音转文字</button>
+            <button class="action-btn">视频记录</button>
+            <button class="action-btn">手动补充</button>
+          </div>
+          <button class="btn-primary" type="button">保存会议纪要</button>
+        </div>
+      </section>
+
+      <!-- 培训考勤 -->
+      <section class="page subpage" id="page-train-attend">
+        <header class="topbar sub dark">
+          <button class="back-btn" data-back>‹</button>
+          <h1>培训考勤</h1>
+          <span class="top-extra">视频拍摄</span>
+        </header>
+        <div class="camera-stage">
+          <div class="info-banner">
+            <strong>培训主题</strong>
+            <span>—</span>
+          </div>
+          <div class="camera-frame short">
+            <div class="face-guide sm"></div>
+            <p>拍摄登记参训人员</p>
+          </div>
+          <button class="shutter" type="button" aria-label="拍摄"><span></span></button>
+          <p class="hint">已签到 — / —</p>
+        </div>
+      </section>
+
+      <!-- 在线学习 -->
+      <section class="page subpage" id="page-train-learn">
+        <header class="topbar sub">
+          <button class="back-btn" data-back>‹</button>
+          <h1>培训在线学习</h1>
+          <span class="top-extra"></span>
+        </header>
+        <div class="scroll-body pad">
+          <div class="empty-state tall">
+            <div class="empty-icon"></div>
+            <p>暂无培训资料</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 远程语音 -->
+      <section class="page subpage" id="page-voice-talk">
+        <header class="topbar sub">
+          <button class="back-btn" data-back>‹</button>
+          <h1>远程语音</h1>
+          <span class="top-extra"></span>
+        </header>
+        <div class="talk-stage">
+          <p class="label">智能终端对讲</p>
+          <div class="talk-core">对讲</div>
+          <h2>终端名称</h2>
+          <p class="sub">—</p>
+          <div class="talk-controls">
+            <button class="ctrl">静音</button>
+            <button class="ctrl danger">挂断</button>
+            <button class="ctrl primary">对讲</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 智能识别 -->
+      <section class="page subpage" id="page-ai-detect">
+        <header class="topbar sub">
+          <button class="back-btn" data-back>‹</button>
+          <h1>智能识别</h1>
+          <span class="top-extra"></span>
+        </header>
+        <div class="scroll-body pad">
+          <div class="preview-box">
+            <p>识别预览区</p>
+          </div>
+          <div class="panel plain-panel">
+            <div class="panel-head">支持识别类型</div>
+            <div class="tag-grid">
+              <span>未戴安全帽</span>
+              <span>未穿反光衣</span>
+              <span>明火</span>
+              <span>吸烟</span>
+              <span>边坡风险</span>
+              <span>违规堆放</span>
+              <span>非作业进入</span>
+              <span>临时用电</span>
+              <span>临边缺失</span>
+              <span>高处作业</span>
+            </div>
+          </div>
+          <div class="panel plain-panel">
+            <div class="panel-head">识别告警</div>
+            <div class="empty-state">
+              <div class="empty-icon"></div>
+              <p>暂无告警</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <nav class="tabbar" id="tabbar">
+        <button class="tab active" data-tab="home">
+          <svg viewBox="0 0 24 24"><path d="M4 10.5L12 4l8 6.5V20a1 1 0 01-1 1h-5v-6H10v6H5a1 1 0 01-1-1v-9.5z" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+          <span>首页</span>
+        </button>
+        <button class="tab" data-tab="todo">
+          <svg viewBox="0 0 24 24"><path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <span>待办</span>
+        </button>
+        <button class="tab" data-tab="messages">
+          <svg viewBox="0 0 24 24"><path d="M4 6h16v12H4V6z" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.6"/></svg>
+          <span>消息</span>
+        </button>
+        <button class="tab" data-tab="mine">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.2" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M5 19c1.5-3.2 4-4.8 7-4.8s5.5 1.6 7 4.8" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+          <span>我的</span>
+        </button>
+      </nav>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
